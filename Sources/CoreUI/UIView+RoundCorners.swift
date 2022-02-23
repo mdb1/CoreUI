@@ -8,6 +8,7 @@
 import UIKit
 
 extension UIView {
+    /// Sets the corner radius to make all the borders rounded.
     public var cornerRadius: CGFloat {
         get { layer.cornerRadius }
         set {
@@ -16,6 +17,10 @@ extension UIView {
         }
     }
 
+    /// Sets the corner radius to make all the parameter borders rounded.
+    /// - Parameters:
+    ///   - corners: The list of corners to round
+    ///   - radius: The cornerRadius to set to the corners
     public func round(corners: [SingularCorner], radius: CGFloat) {
         cornerRadius = radius
         let layerCorners = corners.compactMap { $0.toCornerMask() }
